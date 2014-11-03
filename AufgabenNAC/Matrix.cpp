@@ -12,10 +12,6 @@ Matrix::Matrix(int m, int n)
 	const int length = m_Zeilen * m_Spalten;
 	m_Element = new float[length]();
 
-//	for(int i=0; i <length; i++){
-//		m_Element[i] = 0;
-//	}
-
 	m_counter++;
 	//cout << "Standardkonstruktor von Matrix wurde aufgerufen" << endl;
 }
@@ -28,8 +24,6 @@ Matrix::~Matrix(){
 	m_counter--;
 	delete [] m_Element;
 
-	//delete [] m_Element;
-
 	//cout << "Matrix( ";
 	//ausgabe();
 	//cout << ") wird zerstoert" << endl;
@@ -39,5 +33,4 @@ void Matrix::ausgabe(){
 	for(int i=0; i <m_Zeilen * m_Spalten; i++){
 		cout << m_Element[i] << " ";
 	}
-	//cout << endl;
 }
