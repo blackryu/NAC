@@ -22,7 +22,7 @@ int Matrix::getCounter() {
 
 Matrix::~Matrix(void) {
 	m_counter--;
-	delete[] m_Element;
+	//delete[] m_Element;
 
 	//cout << "Matrix( ";
 	//ausgabe();
