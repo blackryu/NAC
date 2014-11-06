@@ -25,10 +25,14 @@ int main() {
 		//Betrag der Summe ausgeben
 		b.betrag();
 
+		std::cout << "coutner : " << m.getCounter() << std::endl;
+
 		//aufgabenblatt Nr3
 		//Nr 2, objekte auf dem heap anlegen
 		Vector2D *z = new Vector2D(-3, 1);
 		Vector2D *w = new Vector2D();
+
+		std::cout << "coutner : " << m.getCounter() << std::endl;
 
 		//Heap-vektor z zu stack-vektor a addieren
 		a.addiere(*z);
@@ -64,41 +68,71 @@ int main() {
 		//a und z tauschen
 		std::cout << "getauschtes a ist : ";
 		a.ausgabe();
+
 		std::cout << std::endl;
 		std::cout << std::endl;
 
 		std::cout << "getauschtes z ist : ";
 		z->ausgabe();
+
 		std::cout << std::endl;
 		std::cout << std::endl;
 
-		a.betrag();
+		std::cout << "coutner : " << m.getCounter() << std::endl;
+
 		std::cout << std::endl;
-		b.betrag();
 		std::cout << std::endl;
-		c.betrag();
+
+		std::cout << "a.betrag() : " << a.betrag() << std::endl;
+		std::cout << "b.betrag() : " << b.betrag() << std::endl;
+		std::cout << "c.betrag() : " << c.betrag() << std::endl;
+		std::cout << "u.betrag() : " << u.betrag() << std::endl;
+
 		std::cout << std::endl;
-		u.betrag();
 		std::cout << std::endl;
-		w->betrag();
+
+		std::cout << "coutner : " << m.getCounter() << std::endl;
+
 		std::cout << std::endl;
-		z->betrag();
+		std::cout << std::endl;
+
+		std::cout << "w->betrag() : " << w->betrag() << std::endl;
+		std::cout << "z->betrag() : " << z->betrag() << std::endl;
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+
+		std::cout << "coutner : " << m.getCounter() << std::endl;
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+
 		//Speicher von den Heap-Objekten wieder frei geben
 		delete w;
 		delete z;
 
+		std::cout << "coutner : " << m.getCounter() << std::endl;
+
 		//winkel test
 		Vector2D t1(1,1), t2(-5,0);
+		std::cout << "still working" <<std::endl;
+
+		std::cout << "t1.betrag() : " << t1.betrag() << std::endl;
+		std::cout << "t2.betrag() : " << t2.betrag() << std::endl;
+
+		//=======DOENST WORK ANYMORE==============
 
 		//winkel zwischen t1 und t2
 		std::cout << "Der winkel ist: " << t1.winkel(t2) << std::endl;
 
 		//Aufgaben Blatt 5
 		//normales VectorArray mit laengen angabe
-		Vector2D* vecArrMitLaenge[3];
+		//Vector2D* vecArrMitLaenge[3];
 
 		//dynamisches Array mit 2 Vectoren
 		Vector2D* varr[] = {new Vector2D(2,3), new Vector2D (-2,1)};
+
+
 
 		//testen ob array richtig angelegt worden ist
 		std::cout << "Ein Vector array mit folgenden vectoren wurde angelegt:" << std::endl;
@@ -115,6 +149,8 @@ int main() {
 		for(int i = 0; i< 2; i++){
 			delete varr[i];
 		}
+
+
 	}
 	Matrix m(3,4);
 	std::cout << m.getCounter();
