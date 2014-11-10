@@ -16,7 +16,7 @@ Gerade2D::~Gerade2D(void)
 {
 }
 
-const float Gerade2D::gerichteterAbstand(Vector2D x) const
+float Gerade2D::gerichteterAbstand(Vector2D x) const
 {
   Vector2D diff(x);
   diff.subtrahieren(m_Aufpunkt);
@@ -24,7 +24,7 @@ const float Gerade2D::gerichteterAbstand(Vector2D x) const
   return m_Normale.skalarprodukt(diff) / m_Normale.betrag();
 }
 
-bool Gerade2D::aufGerade(Vector2D &x){
+bool Gerade2D::aufGerade(Vector2D x) const{
 	if(fabs(this->gerichteterAbstand(x)) == 0){
 		return true;
 	} else {
@@ -33,18 +33,18 @@ bool Gerade2D::aufGerade(Vector2D &x){
 }
 
 void Gerade2D::normale(Vector2D normale){
-	this->m_Normale = normale;
+	m_Normale = normale;
 }
 
 void Gerade2D::aufpunkt(Vector2D aufpunkt){
-	this->m_Aufpunkt = aufpunkt;
+	m_Aufpunkt = aufpunkt;
 }
 
-Vector2D Gerade2D::normale(){
-	return this->m_Normale;
+const Vector2D Gerade2D::normale() const{
+	return m_Normale;
 }
 
-Vector2D Gerade2D::aufpunkt(){
-	return this->m_Aufpunkt;
+const Vector2D Gerade2D::aufpunkt() const{
+	return m_Aufpunkt;
 }
 

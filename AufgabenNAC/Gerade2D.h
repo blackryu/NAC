@@ -15,13 +15,13 @@ class Gerade2D {
 	Vector2D m_Aufpunkt;
 public:
 	Gerade2D(Vector2D normale, Vector2D *aufpunkt = new Vector2D(0,0));
-	void normale(Vector2D);
-	void aufpunkt(Vector2D);
-	Vector2D normale();
-	Vector2D aufpunkt();
-	bool aufGerade(Vector2D&);
+	void normale(Vector2D normale);
+	void aufpunkt(Vector2D aufpunkt);
+	const Vector2D normale() const;
+	const Vector2D aufpunkt() const;
+	bool aufGerade(Vector2D) const;
 	virtual ~Gerade2D(void);
-	const float gerichteterAbstand(Vector2D v) const;
+	float gerichteterAbstand(Vector2D v) const;
 };
 
 #endif // __Gerade2D_h__
